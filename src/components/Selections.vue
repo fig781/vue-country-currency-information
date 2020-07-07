@@ -11,6 +11,7 @@
 import { BIconXCircle } from 'bootstrap-vue'
 
 export default{
+  //props will get passed here from search to add to the name
   components: {
     BIconXCircle
   }

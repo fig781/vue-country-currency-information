@@ -39,10 +39,13 @@
 <script>
 
 import Selections from './Selections'
+// props here for the country entered to get passed to the selections component when click Add
+// on press of Add will also make a new instance of the selections component, will add the country to an array to get passed to the axios get request
 export default {
   components:{
     'selections': Selections
   }
+
 }
 </script>
 

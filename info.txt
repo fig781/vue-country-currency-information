@@ -1,2 +1,25 @@
-What the project encumpases
- - 
+{{}}: used for dynamic plain text, <div>{{ dynamicText }}</div>
+
+v-once: will update the {{ msg }} only once and will not change the data after rendering once. Used for content that will not change but you 
+  want the page render once with dynamic data
+
+v-html: will render html, as opposed to plain text like normal
+
+v-bind or : : used for dynamic html attributes, <div v-bind:id="dynamicImage"></div> dynamicImage is a variable that changes
+
+v-model: 
+v-on or @: listens to DOM events <a v-on:click="doSomething"> </a>
+
+v-if: dynamicaly renders the html element based on the true false of the attribute, <p v-f="seem"> Yeey </p>
+
+<SCRIPT> Tag
+ - computed: where complex logic will go. know id the values used in the function changed so they dont need to run everytime to check. 
+    When to use: need to compose new data from existing data sources, need to reference a value directly in the template. Need to call the same function more than once in timplate
+ - methods:  where complex logic will go. dont know if the values used in the function changed so they need to run everytime to check.
+    When to use: to call a function when an event happens on the DOM. To call a function from the computed or watchers when something happens in component. need to pass parameters.
+ - props: way to store variables, way to pass the data from parent component down to any of its children, can be an array or an object. Object can have data validation.
+      When we instantiate the component, we can pass a value to the prop. To pass a dynamic value to the prop we use the v-bind directive. The prop data only flows down the
+      component flow.
+ - data: way to store variables. Private memory of each component in app where you can store any variables needed by it. Data only stays with that component. Data should be created
+      as an object data() { return { message: 'Hello'}} 
+ - watch: 
