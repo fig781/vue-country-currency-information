@@ -2,34 +2,25 @@
 
 <template>
   <div id="app">
-    <b-container>
-      <b-row id="headers">
-        <b-col > 
-          <h1>Forex Currency Information</h1>
-          <h3>Search for a country to get started</h3>
-        </b-col>
-      </b-row>
-    </b-container>
-    <b-container>
-      <b-row >
-        <b-col>
-          <search></search>
-        </b-col>
-      </b-row>
-    </b-container>
+    <div id="title">
+      <h1>Currency Information</h1>
+      <h4>Search for a currency to see its information</h4>
+    </div>
+    <Search/>
+    
+    
   </div>
 </template>
+
 
 <script>
 // Import all components in here
 //import HelloWorld from './components/HelloWorld.vue'
-import Search from './components/Search'
-
+import Search from './components/Search.vue'
 
 export default {
-  name: 'App',
-  components: {
-    'search': Search
+  components:{
+    Search
     
   }
 }
@@ -41,8 +32,10 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
-#headers{
+#title{
   text-align: center;
 }
+
 </style>
