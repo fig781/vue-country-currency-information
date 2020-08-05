@@ -2,22 +2,19 @@
   <div>
     <div id="search-section">
       
-      <input type="search">
+      <input type="search" v-model="countryInput" placeholder="ex: Switzerland">
       <div id="button-group">
         <button id="add-button" v-on:click="addButtonClick">Add</button>
         <button id="clear-button" v-on:click="clearButtonClick">Clear</button>
-        <button id="submit-button" v-on:click="submitButtonClick">Search</button>
+        <button id="submit-button">Search</button>
       </div>
     
       <div id="selections-section">
-        <Selection/>
-        <Selection/>
-        <Selection/>
-        <Selection/>
-        <Selection/>
-        <Selection/>
-        <Selection/>
-        <Selection/>
+        <Selection  v-bind:key="countrySelection" 
+                    v-bind:countrySelection="countrySelection" 
+                    v-for="countrySelection in countrySelections"
+                    v-on:del-selection="deleteSelection"/>
+        
 
       </div>
     </div>
@@ -43,9 +40,12 @@ import Selection from './Selection.vue'
 import CurrencyInformation from './CurencyInformation.vue';
 
 export default{
+  name: "Search",
+
   data(){
     return {
-
+      countryInput: '',
+      countrySelections: []
     }
   },
   components: {
@@ -53,10 +53,16 @@ export default{
     CurrencyInformation
   },
   methods: {
-    addButtonClick: function (){
-
+    addButtonClick(){
+      this.countrySelections.push(this.countryInput);
+      this.countryInput = '';
+    },
+    clearButtonClick(){
+      this.countrySelections = [];
+    },
+    deleteSelection(selection){
+      this.countrySelections = this.countrySelections.filter(x => x !== selection)
     }
-    
   }
 }
 </script>

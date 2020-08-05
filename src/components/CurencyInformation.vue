@@ -23,6 +23,20 @@
 
 
 <script>
+  export default {
+    name: "CurrencyInformation",
+    props:{
+      icon: String,
+      country: String,
+      name: String,
+      shortName: String,
+      subunit: String,
+      banknotes: String,
+      coins: String,
+      bank: String,
+      website: String
+    }
+  }
 
 
 </script>

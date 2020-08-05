@@ -1,14 +1,22 @@
 <template>
   <div id="selection">
-    <p id="country-text">United States</p>
-    <button>
-      <i id="x-icon" class="far fa-times-circle"></i>
-    </button>
+    <p id="country-text" v-on:click="$emit('del-selection',countrySelection)">{{ countrySelection }}</p>
+    <button>X</button>
   </div>
+  
 </template>
 
 <script>
-
+  export default{
+    name: "Selection",
+    props: {
+      countrySelection: {
+        type: String,
+        required: true
+      }
+    }
+  }
+  //v-on:click="$emit('del-selection',countrySelection)"
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -31,14 +39,13 @@ button{
   text-decoration: none;
   background: none;
   outline:none;
+  margin-right: 5px;
 }
 
 button:hover{
   background-color: lightgray;
 }
-#x-icon{
-  margin-right: 5px;
-}
+
 
 
 </style>
