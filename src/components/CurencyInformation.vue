@@ -1,21 +1,19 @@
 <template>
   <div id="currency-information">
     <div id="flag-section">
-      <img src="../assets/Flag_of_Switzerland.svg" alt="Country Flag">
+      <img v-bind:src="icon" alt="Country Flag">
     </div>
     <div id="information-section">
-      <h1 id="country-name">Switzerland</h1>
-      <h3>Swiss Franc: CHF</h3>
-      <p><b>Subunit:</b> Rappen</p>
-      <p><b>Banknotes:</b> 10 francs, 20 francs, 50 francs, 200 francs, 1000 francs, 100 francs</p>
-      <p><b>Coins:</b> 5 francs, 10 centimes, 2 francs, 1/2 francs, 20 centimes, 1 francs, 5 centimes</p>
-      <p><b>National Bank:</b> Swiss National Bank</p>
+      <h1 id="country-name">{{ country }}</h1>
+      <h3>{{ name }}: {{ shortName }}</h3>
+      <p><b>Subunit:</b> {{ subunit }}</p>
+      <p><b>Banknotes:</b> {{ subunit }}</p>
+      <p><b>Coins:</b> {{ coins }}</p>
+      <p><b>National Bank:</b> {{ bank }}</p>
       <div id="website">
         <p><b>Official Website:</b></p>
-        <a href="snb.ch">snb.ch</a>
+        <a v-bind:href="website" >{{ website }}</a>
       </div>
-      
-
     </div>
   </div>
 </template>
@@ -48,6 +46,8 @@
   background-color:aliceblue;
   border: 1px solid black;
   border-radius: 15px;
+  margin-top: 15px;
+  max-width: 70%;
 }
 
 img{

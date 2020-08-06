@@ -1,7 +1,7 @@
 <template>
   <div id="selection">
-    <p id="country-text" v-on:click="$emit('del-selection',countrySelection)">{{ countrySelection }}</p>
-    <button>X</button>
+    <p id="country-text" >{{ countrySelection }}</p>
+    <button v-on:click="$emit('del-selection',countrySelection)">X</button>
   </div>
   
 </template>
