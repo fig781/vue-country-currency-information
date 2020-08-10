@@ -23,27 +23,32 @@
 <style scoped>
 #selection{
   margin: 5px;
-  background-color:aliceblue;
-  border: 1px solid grey;
+  background-color:#dbe2ef;
   border-radius: 25px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
 }
 #country-text{
   display: inline-block;
   margin: 0px;
-  padding: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 3px;
 }
 button{
-  border:none;
+  border: none;
   margin:0px;
-  padding:0px;
+  padding:5px;
   text-decoration: none;
   background: none;
   outline:none;
   margin-right: 5px;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
 button:hover{
-  background-color: lightgray;
+  opacity: 0.7;
 }
 
 
