@@ -15,7 +15,6 @@
       countrySuggestions: Array
     }
   }
-  //v-on:click="$emit('del-selection',countrySelection)"
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -25,16 +24,16 @@
   border-bottom: 1px solid lightgrey;
   background-color: #f9f7f7;
 }
+
 #search-suggestion-individual:hover{
   background-color:rgb(223, 223, 223);
   cursor:pointer;
 }
+
 p{
   margin:0px;
   padding-left:5px;
   padding-top:5px;
   padding-bottom:5px;
 }
-
-
 </style>

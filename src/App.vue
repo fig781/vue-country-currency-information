@@ -4,7 +4,8 @@
   <div id="app">
     <div id="title">
       <h1>Currency Information by Country</h1>
-      <p id="info">Press the Add button to add a country to the search queue. You can search for multiple countries at once. </p>
+      <p id="info">Press the Add button to add a country to the search queue or select a country from the search suggestion.  </p>
+      <p>You can search for multiple countries at once.</p>
       <p>Press the Search button to see those countries currency information.</p>
     </div>
     <Search/>
@@ -15,10 +16,7 @@
   </div>
 </template>
 
-
 <script>
-// Import all components in here
-//import HelloWorld from './components/HelloWorld.vue'
 import Search from './components/Search.vue'
 
 export default {
@@ -36,6 +34,7 @@ html, body{
   padding:0;
   height: 100%;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -46,20 +45,23 @@ html, body{
   position: relative;
   background-color: #f9f7f7;
 }
+
 #title{
   text-align: center;
   padding-top: 30px;
 }
+
 #title h1{
   margin-top:0px;
   margin-bottom: 11px;
-  color: #3f72af;
+  color: #93b4ec;
   font-size: 45px;
 }
 
 #title p {
   margin:5px;
 }
+
 #footer{
   position: absolute;
   bottom: 0;
@@ -69,5 +71,4 @@ html, body{
   padding-bottom: 15px;
   background-color: #dbe2ef;
 }
-
 </style>

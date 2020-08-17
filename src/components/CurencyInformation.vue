@@ -6,7 +6,7 @@
     <div id="information-section">
       <h1 id="country-name">{{ countryCurrencyData.country }}</h1>
       <p id="divider"></p>
-      <h3>{{ countryCurrencyData.name }}: {{ countryCurrencyData.shortName }}</h3>
+      <h3>{{ countryCurrencyData.name }}: <span>{{ countryCurrencyData.shortName }}</span></h3>
       <p><b>Subunit:</b> {{ countryCurrencyData.subunit }}</p>
       <p><b>Banknotes:</b> {{ countryCurrencyData.banknotes }}</p>
       <p><b>Coins:</b> {{ countryCurrencyData.coins }}</p>
@@ -20,8 +20,6 @@
   </div>
 </template>
 
-
-
 <script>
   export default {
     name: "CurrencyInformation",
@@ -29,15 +27,13 @@
       countryCurrencyData: Object
     } 
   }
-  
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #currency-information{
   display: flex;
-  background-color:#eaecf0;
+  background-color:#eeeef0;
   border-radius: 15px;
   margin-top: 20px;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
@@ -51,8 +47,6 @@ img{
   object-fit: cover;
 }
 
-
-
 h1,h3,p{
   margin-top: 0px;
   margin-bottom:0px;
@@ -63,22 +57,36 @@ h1,h3,p{
 
 #divider{
   margin-top:3px;
-  width: 17rem;
+  width: 20rem;
   border-top: 2px solid black;
 }
+
+span{
+  color:#7e99c9;
+}
+
 h3{
   margin-top: 5px;
 }
+
 a{
   text-decoration: none;
   padding-top:4px;
 }
+
 #website{
   display:flex;
   padding-bottom:8px;
 }
+
 #official-website{
   padding-right: 0px;
+}
+
+@media only screen and (max-width: 519px) {
+  #divider{
+    width: 15rem;
+  }
 }
 
 @media only screen and (max-width: 455px) {
