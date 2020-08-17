@@ -1,4 +1,4 @@
-# vue-introduction
+# vue-country-currency-information
 
 ## Project setup
 ```
