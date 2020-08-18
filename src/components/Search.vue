@@ -28,6 +28,8 @@
                       v-on:del-selection="deleteSelection(countrySelection)"/>
         </transition-group> 
       </div>
+
+      <div id="loader" v-if="loading == true"></div>
     </div>
 
     <div id="currency-information-section">
@@ -56,7 +58,8 @@ export default{
       countrySelections: [],
       currencyReturnedData: [],
       errorMessage: '',
-      countrySuggestions: []
+      countrySuggestions: [],
+      loading: false
     }
   },
   components: {
@@ -132,8 +135,9 @@ export default{
         setTimeout(()=>this.errorMessage='', 2000)
         return
       }
-      this.currencyReturnedData = []
 
+      this.loading = true;
+      this.currencyReturnedData = []
       var axiosData='';
 
       //use the countries in countrrySelections to form the api request
@@ -161,7 +165,7 @@ export default{
         try{
           const res = await axios.get(fullAxiosRequest)
           for(let a=0; res.data.response.length > a; a++){
-            await delay(250)
+            this.loading = false;
             this.currencyReturnedData.push(
             {
               "id": a,
@@ -176,9 +180,12 @@ export default{
               "bank": res.data.response[a].bank,
               "website": res.data.response[a].website
             })
+            await delay(250)
           }   
         }
         catch(err) {
+          this.errorMessage = "Error in request"
+          setTimeout(()=>this.errorMessage='', 2000)
           console.log(err)
         }
       }
@@ -310,6 +317,22 @@ COUNTRY SELECTIONS SECTION
 .country-selection-transition-leave-to {
   opacity: 0;
   transform: translateY(10px);
+}
+
+#loader {
+  margin: auto;
+  margin-top: 30px;
+  border: 10px solid #eaecf0;
+  border-radius: 50%;
+  border-top: 10px solid #87cefa;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /**************************************************

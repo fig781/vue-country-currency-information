@@ -49,6 +49,7 @@ html, body{
 #title{
   text-align: center;
   padding-top: 30px;
+  margin-bottom: 15px;
 }
 
 #title h1{

@@ -18,7 +18,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #input-error-message-container{
-  margin-top: 5px;
   margin-bottom: 5px;
   background-color: #fda1a9;
   border-radius: 3px;
@@ -28,7 +27,7 @@
 p{
   margin:0px;
   padding-top:5px;
-  padding-bottom: 5px;
-  color: #6e4a4d;
+  padding-bottom:5px;
+  color: #352424;
 }
 </style>
